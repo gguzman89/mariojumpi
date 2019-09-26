@@ -8,21 +8,16 @@ radius = 59.0132
 height = 68.3416
 
 [node name="Jumpi" type="KinematicBody2D"]
-position = Vector2( 581.833, 46.7275 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 486.218, 297.615 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 486.458, 299.02 )
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-current = true
-zoom = Vector2( 2, 2 )
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_viewport_exited"]

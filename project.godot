@@ -19,6 +19,11 @@ config/name="MarioJumpi"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=816
+window/stretch/aspect="expand"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

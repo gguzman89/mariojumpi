@@ -27,10 +27,13 @@ func _physics_process(delta):
 	if acc.x == 0:
 		acc.x = vel.x * FRICTION * delta
 	
-	if Input.is_action_pressed("ui_up") and is_on_floor():
+	if is_on_floor():
 		vel.y = JUMP_SPEED
 	
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 	vel = move_and_slide(vel, Vector2.UP)
 	
+
+func _on_viewport_exited(viewport):
+	print("Game Over!")
