@@ -10,6 +10,8 @@ const JUMP_SPEED = -1500
 var acc = Vector2()
 var vel = Vector2()
 
+signal _game_over
+
 func _ready():
 	set_physics_process(true)
 	
@@ -36,4 +38,5 @@ func _physics_process(delta):
 	
 
 func _on_viewport_exited(viewport):
-	print("Game Over!")
+	emit_signal("_game_over")
+#	queue_free()

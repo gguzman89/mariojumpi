@@ -4,7 +4,6 @@ onready var plataform = preload("res://Level/plataforma.tscn")
 onready var plataform_container = get_node("plataform_container")
 
 onready var p0 = get_node("StaticBody2D")
-
 onready var p10 = get_node("StaticBody2D10")
 
 var pos = Vector2.ZERO
@@ -16,6 +15,7 @@ func _ready():
 	pos.x = $StaticBody2D10.position.x
 	pos.y = $StaticBody2D10.position.y
 	
+	$KinematicBody2D.connect("_game_over",self, "_on_game_over")
 func _process(delta):
 	if plataform_container.get_child_count() <= 5:
 		spawn_plataform(3)
@@ -34,3 +34,7 @@ func _on_viewport_exited(viewport):
 func _on_exited_left(viewport):
 #	queue_free()
 	print("salio de la vista")
+	
+func _on_game_over():
+	print("Game Over!")
+	get_tree().paused = true

@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/Background/bg_layer1.png" type="Texture" id=7]
 
 [node name="Node" type="Node"]
+pause_mode = 1
 script = ExtResource( 1 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
