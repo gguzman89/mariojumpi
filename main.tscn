@@ -53,6 +53,31 @@ drag_margin_v_enabled = false
 smoothing_enabled = true
 script = ExtResource( 4 )
 
+[node name="HUD" type="Control" parent="Camera2D"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="score_lbl" type="Label" parent="Camera2D/HUD"]
+margin_left = -950.239
+margin_top = -562.32
+margin_right = -867.239
+margin_bottom = -539.32
+rect_scale = Vector2( 4, 4 )
+text = "Score: "
+
+[node name="Button" type="Button" parent="Camera2D/HUD"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 712.567
+margin_top = -682.849
+margin_right = 773.567
+margin_bottom = -654.849
+rect_scale = Vector2( 4, 4 )
+text = "Pause"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 scroll_ignore_camera_zoom = true

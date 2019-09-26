@@ -2,12 +2,13 @@ extends Node
 
 onready var plataform = preload("res://Level/plataforma.tscn")
 onready var plataform_container = get_node("plataform_container")
+onready var score = get_node("Camera2D/HUD/score_lbl")
 
 onready var p0 = get_node("StaticBody2D")
 onready var p10 = get_node("StaticBody2D10")
 
 var pos = Vector2.ZERO
-
+var elevation
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -19,7 +20,10 @@ func _ready():
 func _process(delta):
 	if plataform_container.get_child_count() <= 5:
 		spawn_plataform(3)
-		
+	
+	elevation = $Camera2D.score
+	score.set_text(str(elevation))
+	
 func spawn_plataform(num):
 	for i in range(num):
 		var p = plataform.instance()
